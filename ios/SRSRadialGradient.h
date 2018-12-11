@@ -7,5 +7,6 @@
 @property (nullable, nonatomic, strong) NSArray<NSNumber *> *stops;
 @property (nonatomic) CGPoint gradientCenter;
 @property (nonatomic) CGFloat radius;
+@property (nonatomic) CGFloat border;
 
 @end
