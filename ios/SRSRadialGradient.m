@@ -51,6 +51,13 @@
     self.gradientLayer.endRadius = radius;
 }
 
+- (void)setBorder:(CGFloat)border
+{
+    _border = border;
+    self.gradientLayer.cornerRadius = border;
+
+}
+
 - (void)setStops:(NSArray *)stops
 {
     _stops = stops;
