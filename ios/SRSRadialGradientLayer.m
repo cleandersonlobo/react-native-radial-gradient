@@ -16,6 +16,7 @@
     if (self)
     {
         self.needsDisplayOnBoundsChange = YES;
+        self.masksToBounds = true;
         _needsNewGradient = YES;
     }
 
