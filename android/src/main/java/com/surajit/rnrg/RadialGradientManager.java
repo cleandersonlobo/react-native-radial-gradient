@@ -17,6 +17,7 @@ public class RadialGradientManager extends SimpleViewManager<GradientView> {
     public static final String PROP_CENTER = "center";
     public static final String PROP_RADIUS = "radius";
     public static final String PROP_STOPS = "stops";
+    public static final String PROP_BORDER_RADIUS = "border";
 
     @Override
     public String getName() {
@@ -46,5 +47,9 @@ public class RadialGradientManager extends SimpleViewManager<GradientView> {
     @ReactProp(name=PROP_STOPS)
     public void setStops(GradientView gradientView, ReadableArray stops) {
         gradientView.setStops(stops);
+    }
+    @ReactProp(name=PROP_BORDER_RADIUS)
+    public void setBorder(GradientView gradientView, float border) {
+        gradientView.setBorderRadius(border);
     }
 }
