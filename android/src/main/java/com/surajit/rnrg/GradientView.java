@@ -30,6 +30,7 @@ public class GradientView extends View {
     private float centerX;
     private float centerY;
     private float radius;
+    private float borderRadius;
     private int[] colors;
     float[] stops;
 
@@ -51,6 +52,7 @@ public class GradientView extends View {
         centerX = -1;
         centerY = -1;
         radius = -1;
+        borderRadius = -1;
 
         colors = new int[]{Color.RED,Color.BLUE};
     }
@@ -103,9 +105,17 @@ public class GradientView extends View {
     }
 
     public void setRadius(float radius){
+
         if(radius<1)
             return;
         this.radius = PixelUtil.toPixelFromDIP(radius);
+        drawGradient();
+    }
+
+    public void setBorderRadius(float border){
+        if(border<1)
+            return;
+        this.borderRadius = PixelUtil.toPixelFromDIP(border);
         drawGradient();
     }
 
@@ -115,6 +125,7 @@ public class GradientView extends View {
         if(stops!=null && stops.length != colors.length)
             stops = null;
         RadialGradient gradient = new RadialGradient(centerX,centerY,radius,colors,stops,Shader.TileMode.CLAMP);
+
         paint.setShader(gradient);
 
         invalidate();
@@ -131,7 +142,12 @@ public class GradientView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawRect(bounds,paint);
+        if (borderRadius > 0){
+            canvas.drawRoundRect(bounds, borderRadius, borderRadius, paint);
+        }else{
+            canvas.drawRect(bounds,paint);
+        }
+
     }
 
     public void setStops(ReadableArray stops) {

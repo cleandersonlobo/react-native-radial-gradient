@@ -64,6 +64,22 @@ import RadialGradient from 'react-native-radial-gradient';
 </RadialGradient>
 ```
 
+## Usage with border radius
+```javascript
+import RadialGradient from 'react-native-radial-gradient';
+
+// TODO: What to do with the module?
+<RadialGradient style={{width:200,height:200}}
+                        colors={['black','green','blue','red']}
+                        stops={[0.1,0.4,0.3,0.75]}
+                        center={[100,100]}
+                        radius={200}
+                        border={10}
+                        >
+          {child elements}
+</RadialGradient>
+```
+
 ## Some output gradient
 <br>
 1.
