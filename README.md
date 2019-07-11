@@ -19,6 +19,31 @@
 3. In XCode, in the project navigator, select your project. Add `libSRSRadialGradient.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)
 
+#### [iOS] Fixed RN 0.60.+
+
+Fixed installation
+
+```
+react-native link react-native-radial-gradient
+ ```
+ 
+ ```
+ cd ios/
+ ```
+
+**Before**
+
+`pod 'SRSRadialGradient', :path => '../node_modules/react-native-radial-gradient'`
+
+**After**
+
+`pod 'SRSRadialGradient', :path => '../node_modules/react-native-radial-gradient/ios/SRSRadialGradient.podspec'`
+
+Run
+```bash
+pod install
+```
+
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainApplication.java`
@@ -44,9 +69,9 @@ If you've defined *[project-wide properties](https://developer.android.com/studi
      + Project-wide Gradle configuration properties
      */
     ext {
-        compileSdkVersion   = 26
+        compileSdkVersion   = 28
         targetSdkVersion    = 26
-        buildToolsVersion   = "26.0.2"
+        buildToolsVersion   = "28.0.3"
     }
     ```
 
